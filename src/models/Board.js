@@ -1,9 +1,12 @@
-const {Sequelize, sequelize} = require('../db')
+const {Sequelize, sequelize, DataTypes} = require('../db')
 
 const Board = sequelize.define('board', {
   type: Sequelize.STRING,
   description: Sequelize.STRING,
-  rating: Sequelize.NUMBER
+  rating: {
+    type: DataTypes.NUMBER,
+    max: 10
+  }
 })
 
 module.exports = {

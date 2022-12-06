@@ -61,7 +61,6 @@ describe('Model associations', ()=>{
     })
 
     let cheeses = await Cheese.findAll()
-    console.log(cheeses)
     await board.addCheeses(cheeses)
     expect(await board.countCheeses()).toBe(2)
   })
